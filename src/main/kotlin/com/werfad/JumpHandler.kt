@@ -16,6 +16,8 @@ object JumpHandler : TypedActionHandler {
     val MODE_WORD0 = 2
     val MODE_WORD1 = 3
     val MODE_LINE = 4
+    val MODE_LINE_ABOVE = 5
+    val MODE_LINE_BELOW = 6
 
     private lateinit var mOldTypedHandler: TypedActionHandler
     private var mOldEscActionHandler: EditorActionHandler? = null
@@ -85,7 +87,9 @@ object JumpHandler : TypedActionHandler {
                 MODE_CHAR2 -> Char2Finder()
                 MODE_WORD0 -> Word0Finder()
                 MODE_WORD1 -> Word1Finder()
-                MODE_LINE -> LineFinder()
+                MODE_LINE -> LineFinder(LineFinder.Companion.Mode.ALL)
+                MODE_LINE_ABOVE -> LineFinder(LineFinder.Companion.Mode.ABOVE)
+                MODE_LINE_BELOW -> LineFinder(LineFinder.Companion.Mode.BELOW)
                 else -> throw Exception("Invalid start mode: $mode .")
             }
 

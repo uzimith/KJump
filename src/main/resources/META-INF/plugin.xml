@@ -52,6 +52,10 @@
                 description="Input 1 character and jump to any word start with this character."/>
         <action id="KJumpAction.Line" class="com.werfad.LineAction" text="KJump Line"
                 description="Jump to any line."/>
+        <action id="KJumpAction.AboveLine" class="com.werfad.LineAboveAction" text="KJump Above Line"
+                description="Jump to above line."/>
+        <action id="KJumpAction.BelowLine" class="com.werfad.LineBelowAction" text="KJump Below Line"
+                description="Jump to below line."/>
     </actions>
 
 </idea-plugin>
